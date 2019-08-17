@@ -11,15 +11,23 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-    <script>
-      src="https://code.jquery.com/jquery-3.4.1.min.js"
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
            crossorigin="anonymous">
     </script>
-    <script>
-      type = "text/javascript" src = "game.js";
-    </script>
+    
   </head>
+  <style>
+      h1{
+        text-align: center;
+      }
+      .gem {
+        width: 100px;
+        margin-left:75px;
+        
+      }
+      
+    </style>
 
   <body>
       <div class="jumbotron jumbotron-fluid">
@@ -42,29 +50,27 @@
                 crystal.</p>
           </div>
         </div>
-    <style>
-      h1{
-        text-align: center;
-      }
-      .gem {
-        width: 100px;
-      }
-    </style>
-
     
 
+    
+    <p>Goal: <div id="goal"></div></p>
+    <br />
+    <p>Counter: <div id="counter"></div></p>
+    <br />
     <p>Wins: <div id="win"></div></p>
     <br />
     <p>Losses: <div id="lose"></div></p>
     <br />
-    <p>Goal: <div id="goal"></div></p>
-    <br />
     
-
-    <img class="gem" src="images/green_gem.gif" />
-    <img class="gem" src="images/yellow_gem.gif" />
-    <img class="gem" src="images/pink_gem.gif" />
-    <img class="gem" src="images/blue_gem.gif" />
+    <div id="container"></div>
+    
+<!-- 
+    <img class="gem" id="green" src="images/green_gem.gif" />
+    <img class="gem" id="yellow" src="images/yellow_gem.gif" />
+    <img class="gem" id="pink" src="images/pink_gem.gif" />
+    <img class="gem" id="blue" src="images/blue_gem.gif" /> -->
+   
+    <script src = "game.js"> </script>
   </body>
 </html>
 <!-- // You will be given a random number at the start of the game.
