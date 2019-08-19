@@ -18,8 +18,19 @@
     ></script>
   </head>
   <style>
+    body {
+      background-color: rgb(172, 243, 248);
+      background-image: url("images/sparkle.gif");
+      /* background-repeat: no-repeat;
+      background-size: 100%; */
+    }
     h1 {
       text-align: center;
+    }
+    img {
+      z-index: -100;
+
+      width: 100%;
     }
     .gem {
       width: 100px;
@@ -29,15 +40,19 @@
     p {
       text-align: center;
       margin-top: -10px;
+      color: white;
+    }
+    .jumbotron-fluid {
+      color: white;
     }
     .jumbotron {
       background: linear-gradient(
           217deg,
-          rgba(255, 0, 0, 0.8),
-          rgba(255, 0, 0, 0) 70.71%
+          rgba(219, 115, 115, 100),
+          rgba(255, 0, 0, 0) 100%
         ),
-        linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%),
-        linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%);
+        linear-gradient(127deg, rgba(0, 255, 0, 100), rgba(0, 255, 0, 0) 100%),
+        linear-gradient(336deg, rgba(0, 0, 255, 100), rgba(0, 0, 255, 0) 100%);
     }
   </style>
 
@@ -67,6 +82,8 @@
     <br />
 
     <div id="container"></div>
+
+    <!-- <img src="images/sparkle.gif" /> -->
 
     <!-- 
     <img class="gem" id="green" src="images/green_gem.gif" />

@@ -14,9 +14,16 @@ $(document).on("click", ".gem", function() {
   var randomValue = parseInt($(this).attr("randomValue"));
   counter += randomValue;
   $("#counter").html(counter);
+  if (counter === goal) {
+    win++;
+  } else if (counter < goal || counter > goal) {
+    lose++;
+  }
+  $("#win").text(counter === goal);
+  $("#lose").text(counter < goal || counter > goal);
 });
 
-// This makes a button for each crystal count by their number value
+// This makes the button for each crystal count by their number value
 
 var crystals = ["pink", "green", "yellow", "blue"];
 
@@ -24,7 +31,8 @@ var crystals = ["pink", "green", "yellow", "blue"];
 for (let i = 0; i < crystals.length; i++) {
   var newButton = $("<img>");
   newButton.addClass("gem");
-  newButton.attr("randomvalue", Math.ceil(Math.random() * 12));
+  newButton.attr("randomvalue", Math.ceil(Math.random() * 50));
+
   if (crystals[i] === "green") {
     newButton.attr("src", "images/green_gem.gif");
   }
@@ -43,6 +51,7 @@ for (let i = 0; i < crystals.length; i++) {
   $("#container").append(newButton);
 }
 
-// Have a set goal everytime the game ends/resets
+//Generate goal number between 10 and 100 & Have a set goal everytime the player refreshes page
 
+$("#goal").text(Math.floor(Math.random() * 91) + 10);
 // Have the number of wins and losses recorded on the page
