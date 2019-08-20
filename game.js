@@ -14,10 +14,16 @@ $(document).on("click", ".gem", function() {
   var randomValue = parseInt($(this).attr("randomValue"));
   counter += randomValue;
   $("#counter").html(counter);
+
+  // Have the number of wins and losses recorded on the page
   if (counter === goal) {
     win++;
+    //Tells the player to refresh
+    $("div").append("Refresh to restart!");
   } else if (counter < goal || counter > goal) {
     lose++;
+    //Tells the player to refresh
+    $("div").append("Refresh to restart!");
   }
   $("#win").text(counter === goal);
   $("#lose").text(counter < goal || counter > goal);
