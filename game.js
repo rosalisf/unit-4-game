@@ -2,11 +2,12 @@
 
 // Make gems clickable and give them a random value
 
-// This makes a button that counts how many times you click it
-
 // $('#container').html('<h1>hello</h1>')
 
 var counter = 0;
+let win = 0;
+let lose = 0;
+let goal = Math.floor(Math.random() * 91) + 10;
 
 // event listener for 4 buttons
 $(document).on("click", ".gem", function() {
@@ -18,15 +19,13 @@ $(document).on("click", ".gem", function() {
   // Have the number of wins and losses recorded on the page
   if (counter === goal) {
     win++;
-    //Tells the player to refresh
-    $("div").append("Refresh to restart!");
-  } else if (counter < goal || counter > goal) {
+
+    $("#win").text(win);
+  } else if (counter > goal) {
     lose++;
-    //Tells the player to refresh
-    $("div").append("Refresh to restart!");
+
+    $("#lose").text(lose);
   }
-  $("#win").text(counter === goal);
-  $("#lose").text(counter < goal || counter > goal);
 });
 
 // This makes the button for each crystal count by their number value
@@ -59,5 +58,5 @@ for (let i = 0; i < crystals.length; i++) {
 
 //Generate goal number between 10 and 100 & Have a set goal everytime the player refreshes page
 
-$("#goal").text(Math.floor(Math.random() * 91) + 10);
+$("#goal").text(goal);
 // Have the number of wins and losses recorded on the page
