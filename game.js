@@ -4,7 +4,7 @@
 
 // $('#container').html('<h1>hello</h1>')
 
-var counter = 0;
+let counter = 0;
 let win = 0;
 let lose = 0;
 let goal = Math.floor(Math.random() * 91) + 10;
@@ -12,29 +12,43 @@ let goal = Math.floor(Math.random() * 91) + 10;
 // event listener for 4 buttons
 $(document).on("click", ".gem", function() {
   console.log("working");
-  var randomValue = parseInt($(this).attr("randomValue"));
+  const randomValue = parseInt($(this).attr("randomValue"));
   counter += randomValue;
   $("#counter").html(counter);
 
   // Have the number of wins and losses recorded on the page
   if (counter === goal) {
     win++;
-
+    counter = 0;
+    goal = Math.floor(Math.random() * 91) + 10;
     $("#win").text(win);
+    $("#counter").text(counter);
+    $("#goal").text(goal);
   } else if (counter > goal) {
     lose++;
 
     $("#lose").text(lose);
+    counter = 0;
+    goal = Math.floor(Math.random() * 91) + 10;
+    $("#counter").text(counter);
+    $("#goal").text(goal);
   }
 });
 
+// function reset (){
+//   counter = 0;
+//     goal = Math.floor(Math.random() * 91) + 10;
+//     $("#counter").text(counter);
+//     $("#goal").text(goal);
+// }
+
 // This makes the button for each crystal count by their number value
 
-var crystals = ["pink", "green", "yellow", "blue"];
+const crystals = ["pink", "green", "yellow", "blue"];
 
 // creates 4 new crystals
 for (let i = 0; i < crystals.length; i++) {
-  var newButton = $("<img>");
+  const newButton = $("<img>");
   newButton.addClass("gem");
   newButton.attr("randomvalue", Math.ceil(Math.random() * 50));
 
